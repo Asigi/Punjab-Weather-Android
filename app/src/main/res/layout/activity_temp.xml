@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.arsh.pweather.ui.TempActivity"
+    android:background="#509f50"
+    android:paddingLeft="4dp"
+    android:paddingTop="4dp"
+    android:paddingRight="4dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        android:id="@+id/temperatureLabel"
+        android:textColor="@android:color/white"
+        android:textSize="150sp"
+        android:layout_below="@+id/timeLabel"
+        android:layout_centerHorizontal="true"
+        android:typeface="normal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/degreeImageView"
+        android:layout_alignTop="@+id/temperatureLabel"
+        android:layout_toRightOf="@+id/temperatureLabel"
+        android:layout_toEndOf="@+id/temperatureLabel"
+        android:src="@drawable/degree"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-:-- ਨੂ ਤਾਪਮਾਨ ਹੋਵੇਗਾ"
+        android:id="@+id/timeLabel"
+        android:layout_below="@id/locationLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="#80ffffff"
+        android:textSize="14dp"
+        android:typeface="normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationLabel"
+        android:textColor="#ccffffff"
+        android:textSize="18dp"
+        android:gravity="center_horizontal"
+        android:text="ਤੁਹਾਡਾ ਪਿੰਡ ਜ ਸ਼ਹਿਰ \n ਜ਼ਿਲ੍ਹਾ  "
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/refreshImageView"
+        android:layout_centerHorizontal="true"
+        android:typeface="normal" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/refreshImageView"
+        android:src="@drawable/refresh"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="7dp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/lowerLayout"
+        android:paddingBottom="25dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="48 ਘੰਟੇ"
+            android:id="@+id/hourlyButton"
+            android:layout_weight="1"
+            android:background="#80000000"
+            android:layout_marginRight="1dp"
+            android:textColor="#ffffffff"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7 ਦਿਨ "
+            android:id="@+id/dailyButton"
+            android:layout_weight="1"
+            android:textColor="#ffffffff"
+            android:layout_marginLeft="1dp"
+            android:background="#80000000"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temperatureLabel"
+        android:layout_above="@id/lowerLayout"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ਨਮੀ"
+                android:id="@+id/humidityLabel"
+                android:textColor="#AAffffff"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:layout_margin="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:id="@+id/humidityValue"
+                android:textColor="#AAffffff"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:gravity="left|fill_vertical"
+                android:layout_margin="5dp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iconImageView"
+                android:src="@drawable/clear_day"
+
+                />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ਮੌਜੂਦਾ ਮੌਸਮ ਡਾਊਨਲੋਡ ਹੰਦਾ"
+                android:id="@+id/summaryLabel"
+                android:textColor="#003f04"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:layout_below="@+id/linearLayout"
+                android:layout_toLeftOf="@+id/degreeImageView"
+                android:layout_toStartOf="@+id/degreeImageView" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
